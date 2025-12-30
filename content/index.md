@@ -1,10 +1,5 @@
 ---
-title: Welcome to Quartz
+title: Welcome to Anurag's Vault
 ---
 
-This is a blank Quartz installation.
-Test
-
-## Hello
-
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+My workspace where in I pen my thoughts and my learnings on backend design, distributed systems, security etc.
