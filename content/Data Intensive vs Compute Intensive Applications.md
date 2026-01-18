@@ -19,3 +19,4 @@ An application is called *Compute Intensive* where CPU cycles are the bottleneck
 A compute intensive application is one where raw CPU speed and efficiency determines how fast it can run. Speed of network, hard drive and other resources do not have any affect.
 
 Ex: AI/ML model Training, Cryptography and hashing algorithm calculations, Video encoding/decoding, 3D rendering etc.
+
