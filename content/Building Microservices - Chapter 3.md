@@ -3,7 +3,7 @@
 
 When we talk about microservices, the first big question is almost always:
 
-> “We already have a monolith… how do we split it safely?”
+> “We already have a monolith - how do we split it safely?”
 
 Chapter 3 of _Building Microservices_  focuses exactly on this problem. The key idea of the chapter is **not rushing**, **not rewriting everything**, and **not treating the monolith as bad**. Instead, we evolve the system carefully.
 
