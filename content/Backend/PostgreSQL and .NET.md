@@ -13,3 +13,37 @@
 	- These are POCOs (plain old class objects)
 - Create an `AppDbContext` class that inherits from EF's `DbContext` class and holds the `DbSet` of all the entities.
 	- Override the `OnModelCreating` method and use `modelBuilder.ApplyConfigurationsFromAssembly` in it.
+- Create Configurations for individual entities so that upon migrations, the table gets created in the database.
+- ```csharp
+  public class CustomerConfiguration:IEntityTypeConfiguration<Customer>  
+{  
+    public void Configure(EntityTypeBuilder<Customer> builder)  
+    {        builder.ToTable("customers");  
+            
+            builder.HasKey(c=>c.Id);  
+            builder.Property(c => c.Id)  
+            .HasColumnName("id")  
+            .UseIdentityAlwaysColumn();  
+                
+            builder.Property(c => c.FirstName)  
+            .HasColumnName("first_name")  
+            .HasMaxLength(100)  
+            .IsRequired();  
+                
+            builder.Property(c => c.LastName)  
+            .HasColumnName("last_name")  
+            .HasMaxLength(100)  
+            .IsRequired();  
+                
+            builder.Property(c => c.Email)  
+            .HasColumnName("email")  
+            .HasMaxLength(255)  
+            .IsRequired();  
+  
+	        builder.Property(c => c.CreatedAt)  
+            .HasColumnName("created_at")  
+            .HasColumnType("datetime")  
+            .HasDefaultValueSql("NOW()");
+    }
+}
+  ```
