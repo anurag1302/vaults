@@ -16,9 +16,10 @@
 - Create Configurations for individual entities so that upon migrations, the table gets created in the database.
 - ```csharp
   public class CustomerConfiguration:IEntityTypeConfiguration<Customer>  
-{  
-    public void Configure(EntityTypeBuilder<Customer> builder)  
-    {        builder.ToTable("customers");  
+	{  
+	    public void Configure(EntityTypeBuilder<Customer> builder)  
+	    {        
+		    builder.ToTable("customers");  
             
             builder.HasKey(c=>c.Id);  
             builder.Property(c => c.Id)  
@@ -44,6 +45,6 @@
             .HasColumnName("created_at")  
             .HasColumnType("datetime")  
             .HasDefaultValueSql("NOW()");
-    }
-}
+	    }
+	}
   ```
