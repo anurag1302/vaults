@@ -14,6 +14,13 @@
 - Create an `AppDbContext` class that inherits from EF's `DbContext` class and holds the `DbSet` of all the entities.
 	- Override the `OnModelCreating` method and use `modelBuilder.ApplyConfigurationsFromAssembly` in it.
 - Create Configurations for individual entities so that upon migrations, the table gets created in the database.
+	- `EF Core` is smart enough to create DB tables directly after looking at the `Entities` once migration is applied and database is updated. This follows standard EF conventions.
+
+
+> [!info] IMP
+> Configurations classes are needed if we want to have more control over the objects or want to customize the model. For example - add max length to the column, change the name of the column etc etc.
+
+
 - ```csharp
   public class CustomerConfiguration:IEntityTypeConfiguration<Customer>  
 	{  
