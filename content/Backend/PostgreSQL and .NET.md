@@ -60,5 +60,5 @@
 	> - `dotnet ef migrations add InitialCreate/OrderTableAdded`
 	> - `dotnet ef database update`
 > 
-> To undo the recent migration, below command can be used
+> To undo the recent migration, below command can be used:
 	> - `dotnet ef migrations remove`
