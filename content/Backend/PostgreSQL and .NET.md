@@ -55,3 +55,7 @@
 	    }
 	}
   ```
+
+- EF Migrations Terminal Commands
+- `dotnet ef migrations add InitialCreate/OrderTableAdded`
+- `dotnet ef database update`
